@@ -25,7 +25,8 @@ public class ParityChecker {
                 System.out.println("Correct!");
             } else {
                 rightCount = 0;
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + (answer.equals("'yes'.") ? "'no'." : "yes."));
+                System.out.print("'" + answer + "'" + " is wrong answer ;(.");
+                System.out.println(" Correct answer was " + (answer.equals("'yes'.") ? "'no'." : "'yes'."));
                 System.out.println("Let's try again, " + name + "!");
             }
         } while (rightCount > loose && rightCount < win);
