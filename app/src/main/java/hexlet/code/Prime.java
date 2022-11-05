@@ -14,13 +14,21 @@ public class Prime {
 
         if (question == 2) {
             Engine.rightAnswer = "yes";
+            return 0;
         }
+
         for (int i = 2; i <= Math.sqrt(question); i++) {
-            if (question % i == 0 || question == 1 || question == 0) {
+            if (question % i == 0) {
                 Engine.rightAnswer = "no";
                 return 0;
             }
         }
+
+        if (question == 0 || question == 1) {
+            Engine.rightAnswer = "no";
+            return 0;
+        }
+
         Engine.rightAnswer = "yes";
         return 0;
     }
