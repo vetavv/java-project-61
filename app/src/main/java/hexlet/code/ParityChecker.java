@@ -1,11 +1,10 @@
 package hexlet.code;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class ParityChecker {
     private
-    static String greetingLine = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        static String greetingLine = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     static int newQuestion() {
         Random random = new Random();
 
@@ -18,18 +17,18 @@ public class ParityChecker {
     }
 
     public
-    static int run() {
+        static int run() {
         Engine.greeting(greetingLine);
-            int roundsNumber = 3;
-            for (int i = 0; i < roundsNumber; i++) {
-                Engine.gameRound(newQuestion());
-                if (Engine.roundResult == false) {
-                    System.out.println("Let's try again, " + Engine.name + "!");
-                    return 0;
-                }
+        int roundsNumber = 3;
+        for (int i = 0; i < roundsNumber; i++) {
+            Engine.gameRound(newQuestion());
+            if (!Engine.roundResult) {
+                System.out.println("Let's try again, " + Engine.name + "!");
+                return 0;
             }
-            System.out.println("Congratulations, " + Engine.name + "!");
-            return 0;
+        }
+        System.out.println("Congratulations, " + Engine.name + "!");
+        return 0;
     }
 }
 

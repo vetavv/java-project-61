@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Prime {
     private
-    static String greetingLine = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        static String greetingLine = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     static int newQuestion() {
         Random random = new Random();
@@ -22,12 +22,12 @@ public class Prime {
     }
 
     public
-    static int run() {
+        static int run() {
         Engine.greeting(greetingLine);
         int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
-            if (Engine.roundResult == false) {
+            if (!Engine.roundResult) {
                 System.out.println("Let's try again, " + Engine.name + "!");
                 return 0;
             }

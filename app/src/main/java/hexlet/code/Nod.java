@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Nod {
     private
-    static String greetingLine = "Find the greatest common divisor of given numbers.";
+        static String greetingLine = "Find the greatest common divisor of given numbers.";
     static int newQuestion() {
         Random random = new Random();
         int number1 = random.nextInt(100);
@@ -25,12 +25,12 @@ public class Nod {
     }
 
     public
-    static int run() {
+        static int run() {
         Engine.greeting(greetingLine);
         int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
-            if (Engine.roundResult == false) {
+            if (!Engine.roundResult) {
                 System.out.println("Let's try again, " + Engine.name + "!");
                 return 0;
             }

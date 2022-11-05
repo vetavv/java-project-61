@@ -1,12 +1,10 @@
 package hexlet.code;
 
-import java.time.temporal.ChronoUnit;
 import java.util.Random;
-import java.util.StringJoiner;
 
 public class Progression {
     private
-    static String greetingLine = "What number is missing in the progression?";
+        static String greetingLine = "What number is missing in the progression?";
     static int newQuestion() {
         Random random = new Random();
         int currentElement = random.nextInt(100);
@@ -31,12 +29,12 @@ public class Progression {
     }
 
     public
-    static int run() {
+        static int run() {
         Engine.greeting(greetingLine);
         int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
-            if (Engine.roundResult == false) {
+            if (!Engine.roundResult) {
                 System.out.println("Let's try again, " + Engine.name + "!");
                 return 0;
             }

@@ -1,11 +1,10 @@
 package hexlet.code;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Calc {
     private
-    static String greetingLine = "What is the result of the expression?";
+        static String greetingLine = "What is the result of the expression?";
     static int newQuestion() {
         Random random = new Random();
         int number1 = random.nextInt(10);
@@ -34,12 +33,12 @@ public class Calc {
     }
 
     public
-    static int run() {
+        static int run() {
         Engine.greeting(greetingLine);
         int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
-            if (Engine.roundResult == false) {
+            if (!Engine.roundResult) {
                 System.out.println("Let's try again, " + Engine.name + "!");
                 return 0;
             }
