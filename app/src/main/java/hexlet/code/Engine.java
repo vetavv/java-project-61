@@ -11,8 +11,9 @@ public class Engine {
     public static void gameRound(int newQuestion) {
         Scanner input = new Scanner(System.in);
         System.out.println("Question: " + question);
+
+        System.out.print("Your answer: ");
         String answer = input.nextLine();
-        System.out.println("Your answer: " + answer);
 
         roundResult = rightAnswer.equals(answer);
 
@@ -27,7 +28,7 @@ public class Engine {
 
     static void greeting(String greetingLine) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
+        System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
         name = input.nextLine();
         System.out.println("Hello, " + name + "!");

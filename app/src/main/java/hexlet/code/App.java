@@ -7,8 +7,8 @@ public class App {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
+        System.out.print("Your choice: ");
         int choice = input.nextInt();
-        System.out.println("Your choice: " + choice);
         switch (choice) {
             case 1:
                 Cli.greeting();
