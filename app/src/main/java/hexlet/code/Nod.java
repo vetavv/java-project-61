@@ -7,8 +7,9 @@ public class Nod {
         static String greetingLine = "Find the greatest common divisor of given numbers.";
     static int newQuestion() {
         Random random = new Random();
-        int number1 = random.nextInt(100);
-        int number2 = random.nextInt(100);
+        int randomNumberRange = 100;
+        int number1 = random.nextInt(randomNumberRange);
+        int number2 = random.nextInt(randomNumberRange);
         Engine.question = number1 + " " + number2;
 
         int maxNumber = Integer.max(number2, number1);

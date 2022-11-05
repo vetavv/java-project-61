@@ -8,7 +8,8 @@ public class Prime {
 
     static int newQuestion() {
         Random random = new Random();
-        int question = random.nextInt(50);
+        int randomNumberRange = 50;
+        int question = random.nextInt(randomNumberRange);
         Engine.question = Integer.toString(question);
 
         for (int i = 2; i <= Math.sqrt(question); i++) {

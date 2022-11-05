@@ -7,8 +7,8 @@ public class ParityChecker {
         static String greetingLine = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     static int newQuestion() {
         Random random = new Random();
-
-        int newNumber = random.nextInt(10000);
+        int randomNumberRange = 10000;
+        int newNumber = random.nextInt(randomNumberRange);
         String rightAnswer = newNumber % 2 == 0 ? "yes" : "no";
 
         Engine.question = Integer.toString(newNumber);

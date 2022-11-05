@@ -7,10 +7,18 @@ public class Progression {
         static String greetingLine = "What number is missing in the progression?";
     static int newQuestion() {
         Random random = new Random();
-        int currentElement = random.nextInt(100);
-        int elementsNumber = random.nextInt(5, 10);
+        int randomNumberRange = 100;
+        int currentElement = random.nextInt(randomNumberRange);
+
+        int minElementsNumber = 5;
+        int maxElementNumber = 10;
+
+        int elementsNumber = random.nextInt(minElementsNumber, maxElementNumber);
         int hiddenElementNumber = random.nextInt(elementsNumber);
-        int progressionStep = random.nextInt(1, 10);
+        int minProgressionStep = 1;
+
+        int maxProgressionStep = 10;
+        int progressionStep = random.nextInt(minProgressionStep, maxProgressionStep);
 
         String progressionLine = Integer.toString(currentElement);
 

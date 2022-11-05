@@ -7,9 +7,11 @@ public class Calc {
         static String greetingLine = "What is the result of the expression?";
     static int newQuestion() {
         Random random = new Random();
-        int number1 = random.nextInt(10);
-        int number2 = random.nextInt(10);
-        int operator = random.nextInt(3);
+        int randomNumberRange = 10;
+        int randomOperatorRange = 3;
+        int number1 = random.nextInt(randomNumberRange);
+        int number2 = random.nextInt(randomNumberRange);
+        int operator = random.nextInt(randomOperatorRange);
         int rightAnswer = 0;
 
         switch (operator) {
