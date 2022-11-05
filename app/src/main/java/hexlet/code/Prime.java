@@ -12,8 +12,11 @@ public class Prime {
         int question = random.nextInt(randomNumberRange);
         Engine.question = Integer.toString(question);
 
+        if (question == 2) {
+            Engine.rightAnswer = "yes";
+        }
         for (int i = 2; i <= Math.sqrt(question); i++) {
-            if (question % i == 0) {
+            if (question % i == 0 || question == 1 || question == 0) {
                 Engine.rightAnswer = "no";
                 return 0;
             }
