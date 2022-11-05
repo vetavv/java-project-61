@@ -4,34 +4,34 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ParityChecker {
-    static void parityCheckerGame() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = input.nextLine();
-        System.out.println("Hello, " + name + "!");
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int loose = 0;
-        int win = 3;
-        int rightCount = 0;
+    private
+    static String greetingLine = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    static int newQuestion() {
+        Random random = new Random();
 
-        do {
-            Random random = new Random();
-            int number = random.nextInt();
-            System.out.println("Question: " + number);
-            String answer = input.nextLine();
-            if ((number % 2 == 0 && answer.equals("yes")) || (number % 2 != 0 && answer.equals("no"))) {
-                rightCount += 1;
-                System.out.println("Correct!");
-            } else {
-                rightCount = 0;
-                System.out.print("'" + answer + "'" + " is wrong answer ;(.");
-                System.out.println(" Correct answer was " + (answer.equals("'yes'.") ? "'no'." : "'yes'."));
-                System.out.println("Let's try again, " + name + "!");
+        int newNumber = random.nextInt(10000);
+        String rightAnswer = newNumber % 2 == 0 ? "yes" : "no";
+
+        Engine.question = Integer.toString(newNumber);
+        Engine.rightAnswer = rightAnswer;
+        return 0;
+    }
+
+    public
+    static int run() {
+        Engine.greeting(greetingLine);
+            int roundsNumber = 3;
+            for (int i = 0; i < roundsNumber; i++) {
+                Engine.gameRound(newQuestion());
+                if (Engine.roundResult == false) {
+                    System.out.println("Let's try again, " + Engine.name + "!");
+                    return 0;
+                }
             }
-        } while (rightCount > loose && rightCount < win);
-        if (rightCount == win) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+            System.out.println("Congratulations, " + Engine.name + "!");
+            return 0;
     }
 }
+
+
+
