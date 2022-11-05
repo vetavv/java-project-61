@@ -7,7 +7,7 @@ public class Nod {
         static String greetingLine = "Find the greatest common divisor of given numbers.";
     static int newQuestion() {
         Random random = new Random();
-        int randomNumberRange = 100;
+        final int randomNumberRange = 100;
         int number1 = random.nextInt(randomNumberRange);
         int number2 = random.nextInt(randomNumberRange);
         Engine.question = number1 + " " + number2;
@@ -28,7 +28,7 @@ public class Nod {
     public
         static int run() {
         Engine.greeting(greetingLine);
-        int roundsNumber = 3;
+        final int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
             if (!Engine.roundResult) {

@@ -7,8 +7,8 @@ public class Calc {
         static String greetingLine = "What is the result of the expression?";
     static int newQuestion() {
         Random random = new Random();
-        int randomNumberRange = 10;
-        int randomOperatorRange = 3;
+        final var randomNumberRange = 10;
+        final var randomOperatorRange = 3;
         int number1 = random.nextInt(randomNumberRange);
         int number2 = random.nextInt(randomNumberRange);
         int operator = random.nextInt(randomOperatorRange);
@@ -37,7 +37,7 @@ public class Calc {
     public
         static int run() {
         Engine.greeting(greetingLine);
-        int roundsNumber = 3;
+        final var roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
             if (!Engine.roundResult) {

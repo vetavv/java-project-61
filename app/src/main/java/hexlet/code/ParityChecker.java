@@ -7,7 +7,7 @@ public class ParityChecker {
         static String greetingLine = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     static int newQuestion() {
         Random random = new Random();
-        int randomNumberRange = 10000;
+        final int randomNumberRange = 10000;
         int newNumber = random.nextInt(randomNumberRange);
         String rightAnswer = newNumber % 2 == 0 ? "yes" : "no";
 
@@ -19,7 +19,7 @@ public class ParityChecker {
     public
         static int run() {
         Engine.greeting(greetingLine);
-        int roundsNumber = 3;
+        final int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
             if (!Engine.roundResult) {

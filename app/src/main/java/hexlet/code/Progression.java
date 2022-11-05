@@ -7,17 +7,17 @@ public class Progression {
         static String greetingLine = "What number is missing in the progression?";
     static int newQuestion() {
         Random random = new Random();
-        int randomNumberRange = 100;
+        final int randomNumberRange = 100;
         int currentElement = random.nextInt(randomNumberRange);
 
-        int minElementsNumber = 5;
-        int maxElementNumber = 10;
+        final int minElementsNumber = 5;
+        final int maxElementNumber = 10;
 
         int elementsNumber = random.nextInt(minElementsNumber, maxElementNumber);
         int hiddenElementNumber = random.nextInt(elementsNumber);
-        int minProgressionStep = 1;
+        final int minProgressionStep = 1;
 
-        int maxProgressionStep = 10;
+        final int maxProgressionStep = 10;
         int progressionStep = random.nextInt(minProgressionStep, maxProgressionStep);
 
         String progressionLine = Integer.toString(currentElement);
@@ -39,7 +39,7 @@ public class Progression {
     public
         static int run() {
         Engine.greeting(greetingLine);
-        int roundsNumber = 3;
+        final int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
             if (!Engine.roundResult) {

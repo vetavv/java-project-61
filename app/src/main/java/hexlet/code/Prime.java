@@ -8,7 +8,7 @@ public class Prime {
 
     static int newQuestion() {
         Random random = new Random();
-        int randomNumberRange = 50;
+        final int randomNumberRange = 50;
         int question = random.nextInt(randomNumberRange);
         Engine.question = Integer.toString(question);
 
@@ -36,7 +36,7 @@ public class Prime {
     public
         static int run() {
         Engine.greeting(greetingLine);
-        int roundsNumber = 3;
+        final int roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
             if (!Engine.roundResult) {
