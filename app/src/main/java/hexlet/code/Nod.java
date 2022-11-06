@@ -16,7 +16,7 @@ public class Nod {
         int minNumber = Integer.min(number1, number2);
         int rightAnswer = 1;
 
-        for (int i = 2; i < Math.sqrt(minNumber); i++) {
+        for (int i = 2; i <= minNumber; i++) {
             while (maxNumber % i == 0 && minNumber % i == 0) {
                 maxNumber /= i;
                 minNumber /= i;
