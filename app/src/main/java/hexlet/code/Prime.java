@@ -10,41 +10,40 @@ public class Prime {
         Random random = new Random();
         final int randomNumberRange = 50;
         int question = random.nextInt(randomNumberRange);
-        Engine.question = Integer.toString(question);
+        Engine.setQuestion(Integer.toString(question));
 
         if (question == 2) {
-            Engine.rightAnswer = "yes";
+            Engine.setRightAnswer("yes");
             return 0;
         }
 
         for (int i = 2; i <= Math.sqrt(question); i++) {
             if (question % i == 0) {
-                Engine.rightAnswer = "no";
+                Engine.setRightAnswer("no");
                 return 0;
             }
         }
 
         if (question == 0 || question == 1) {
-            Engine.rightAnswer = "no";
+            Engine.setRightAnswer("no");
             return 0;
         }
 
-        Engine.rightAnswer = "yes";
+        Engine.setRightAnswer("yes");
         return 0;
     }
 
-    public
-        static int run() {
+    public static int run() {
         Engine.greeting(greetingLine);
-        final int roundsNumber = 3;
+        final var roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
-            if (!Engine.roundResult) {
-                System.out.println("Let's try again, " + Engine.name + "!");
+            if (!Engine.getRoundResult()) {
+                System.out.println("Let's try again, " + Engine.getName() + "!");
                 return 0;
             }
         }
-        System.out.println("Congratulations, " + Engine.name + "!");
+        System.out.println("Congratulations, " + Engine.getName() + "!");
         return 0;
     }
 }

@@ -26,28 +26,27 @@ public class Progression {
             if (i == hiddenElementNumber) {
                 progressionLine += " ..";
                 currentElement += progressionStep;
-                Engine.rightAnswer = Integer.toString(currentElement);
+                Engine.setRightAnswer(Integer.toString(currentElement));
                 continue;
             }
             currentElement += progressionStep;
             progressionLine += " " + Integer.toString(currentElement);
         }
-        Engine.question = progressionLine;
+        Engine.setQuestion(progressionLine);
         return 0;
     }
 
-    public
-        static int run() {
+    public static int run() {
         Engine.greeting(greetingLine);
-        final int roundsNumber = 3;
+        final var roundsNumber = 3;
         for (int i = 0; i < roundsNumber; i++) {
             Engine.gameRound(newQuestion());
-            if (!Engine.roundResult) {
-                System.out.println("Let's try again, " + Engine.name + "!");
+            if (!Engine.getRoundResult()) {
+                System.out.println("Let's try again, " + Engine.getName() + "!");
                 return 0;
             }
         }
-        System.out.println("Congratulations, " + Engine.name + "!");
+        System.out.println("Congratulations, " + Engine.getName() + "!");
         return 0;
     }
 }
