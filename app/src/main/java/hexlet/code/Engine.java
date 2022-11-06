@@ -21,7 +21,7 @@ public class Engine {
         }
     }
 
-    public static void greeting(String greetingLine){
+    public static void greeting(String greetingLine) {
         Scanner input = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -29,7 +29,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(greetingLine);
     }
-    public static String getName () {
+    public static String getName() {
         return name;
     }
     public static boolean getRoundResult() {
