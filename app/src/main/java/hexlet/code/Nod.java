@@ -14,13 +14,15 @@ public class Nod {
 
         int maxNumber = Integer.max(number2, number1);
         int minNumber = Integer.min(number1, number2);
+        int rightAnswer = 1;
 
-        while (maxNumber - minNumber >= 1) {
-            minNumber = Integer.min(minNumber, maxNumber - minNumber);
-            maxNumber = Integer.max(minNumber, maxNumber - minNumber);
+        for (int i = 2; i < Math.sqrt(minNumber); i++) {
+            while (maxNumber % i == 0 && minNumber % i == 0) {
+                maxNumber /= i;
+                minNumber /= i;
+                rightAnswer *= i;
+            }
         }
-
-        int rightAnswer = minNumber;
         Engine.rightAnswer = Integer.toString(rightAnswer);
         return 0;
     }
